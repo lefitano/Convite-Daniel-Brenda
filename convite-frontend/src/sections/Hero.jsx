@@ -1,4 +1,6 @@
 import { useState, useRef } from 'react'
+import fotoNoivos from '../assets/images/ImagemPrincipalDanielBrenda.jpeg'
+import musicaSrc from '../assets/audio/musicaEscolhida.mp3'
 
 export default function Hero() {
   const [playing, setPlaying] = useState(false)
@@ -17,21 +19,11 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero">
-      <audio ref={audioRef} src="/assets/audio/musica.mp3" loop />
-
-      <div className="hero__bg">
-        <img
-          src="/assets/images/noivos.jpg"
-          alt=""
-          className="hero__bg-img"
-          onError={e => { e.currentTarget.style.display = 'none' }}
-        />
-        <div className="hero__bg-overlay" />
-      </div>
+      <audio ref={audioRef} src={musicaSrc} loop />
 
       <div className="hero__content">
         <p className="hero__pre" data-aos="fade-up">
-          Convidamos você para celebrar
+          Convidamos você para celebrar nosso sonhado dia
         </p>
 
         <h1 className="hero__names" data-aos="fade-up" data-aos-delay="150">
@@ -49,11 +41,19 @@ export default function Hero() {
           onClick={toggleMusic}
           data-aos="fade-up"
           data-aos-delay="500"
-          aria-label={playing ? 'Pausar música' : 'Tocar música'}
+          aria-label={playing ? 'Pausar música' : 'Clica aqui pra adicionar uma música'}
         >
           <span className="hero__music-icon">{playing ? '❚❚' : '♪'}</span>
-          {playing ? 'Pausar música' : 'Tocar música'}
+          {playing ? 'Pausar música' : 'Clica aqui pra adicionar uma música'}
         </button>
+      </div>
+
+      <div className="hero__photo-wrap" data-aos="fade-up" data-aos-delay="400">
+        <img
+          src={fotoNoivos}
+          alt="Daniel e Brenda"
+          className="hero__photo"
+        />
       </div>
 
       <a href="#invite" className="hero__scroll-hint" aria-label="Ver mais">
