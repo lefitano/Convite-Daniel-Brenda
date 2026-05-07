@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 const links = [
-  { href: '#hero',    label: 'Início'      },
-  { href: '#gallery', label: 'Álbum'       },
+  { href: '#hero',    label: 'Novo Início'      },
+  { href: '#gallery', label: 'Nosso Álbum'       },
   { href: '#invite',  label: 'Convite'     },
-  { href: '#event',   label: 'Cerimônia'   },
+  { href: '#event',   label: 'O dia'   },
   { href: '#rsvp',    label: 'Confirmação' },
   { href: '#gifts',   label: 'Presentes'   },
 ]
@@ -13,7 +13,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="navbar">
+    <nav className="navbar">  
       <a href="#hero" className="navbar__brand">Daniel &amp; Brenda</a>
 
       <button
