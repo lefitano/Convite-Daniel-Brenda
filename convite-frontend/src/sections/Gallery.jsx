@@ -40,6 +40,8 @@ export default function Gallery() {
                   src={src}
                   alt={`Foto ${i + 1}`}
                   className="gallery__img"
+                  loading={i < 2 ? 'eager' : 'lazy'}
+                  decoding="async"
                 />
               </div>
             </SwiperSlide>
