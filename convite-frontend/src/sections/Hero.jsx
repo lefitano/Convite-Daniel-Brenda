@@ -27,7 +27,7 @@ export default function Hero() {
         </p>
 
         <h1 className="hero__names" data-aos="fade-up" data-aos-delay="150">
-          Daniel <span className="hero__amp">&amp;</span> Brenda
+          Brenda <span className="hero__amp">&amp;</span> Daniel
         </h1>
 
         <div className="hero__divider" data-aos="fade-up" data-aos-delay="300" />

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const links = [
-  { href: '#hero',    label: 'D & B'      },
+  { href: '#hero',    label: 'B & D'      },
   { href: '#gallery', label: 'Nosso Álbum'       },
   { href: '#invite',  label: 'Convite'     },
   { href: '#event',   label: 'O dia'   },
