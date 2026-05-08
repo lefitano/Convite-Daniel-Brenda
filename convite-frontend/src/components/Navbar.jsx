@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import logo from '../assets/images/LogoCasamento.jpeg'
 
 const links = [
   { href: '#hero',    label: 'B & D'      },
@@ -14,7 +15,9 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">  
-      <a href="#hero" className="navbar__brand">Daniel &amp; Brenda</a>
+      <a href="#hero" className="navbar__brand">
+        <img src={logo} alt="Brenda & Daniel" className="navbar__logo" />
+      </a>
 
       <button
         className={`navbar__hamburger${open ? ' open' : ''}`}

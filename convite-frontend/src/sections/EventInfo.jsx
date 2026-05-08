@@ -10,7 +10,7 @@ const cards = [
   {
     Icon: Clock4,
     label: 'Horário',
-    title: '16h00',
+    title: '15:30',
     detail: 'Pontualmente',
   },
   {
@@ -28,7 +28,7 @@ export default function EventInfo() {
 
         <span className="event__eyebrow" data-aos="fade-up">Detalhes</span>
         <h2 className="event__title" data-aos="fade-up" data-aos-delay="100">
-          A Cerimônia
+          A Cerimônia & Recepção
         </h2>
 
         <div className="event__cards">

@@ -1,9 +1,15 @@
+import { Mail } from 'lucide-react'
+
 export default function Invite() {
   return (
     <section id="invite" className="invite">
       <div className="invite__inner">
 
         <span className="invite__eyebrow" data-aos="fade-up">Convite</span>
+
+        <div className="invite__icon" data-aos="zoom-in" data-aos-delay="50" aria-hidden="true">
+          <Mail size={48} strokeWidth={1.2} />
+        </div>
 
         <div className="invite__ornament" aria-hidden="true" data-aos="fade-up" data-aos-delay="100">
           <span />
