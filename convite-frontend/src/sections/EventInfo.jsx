@@ -1,4 +1,5 @@
 import { CalendarDays, Clock4, MapPin } from 'lucide-react'
+import fotoLocal from '../assets/images/LocalCerimoniaErecepcao.jpeg'
 
 const cards = [
   {
@@ -30,6 +31,10 @@ export default function EventInfo() {
         <h2 className="event__title" data-aos="fade-up" data-aos-delay="100">
           A Cerimônia & Recepção
         </h2>
+
+        <div className="event__venue-img-wrap" data-aos="fade-up" data-aos-delay="100">
+          <img src={fotoLocal} alt="Refúgio Matões" className="event__venue-img" />
+        </div>
 
         <div className="event__cards">
           {cards.map(({ Icon, label, title, detail }, i) => (

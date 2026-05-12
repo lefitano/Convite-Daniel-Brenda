@@ -6,6 +6,7 @@ function BotanicalOrnament({ side }) {
       className={`botanical-ornament botanical-ornament--${side}`}
       aria-hidden="true"
     >
+      <div className="botanical-ornament__inner">
       <svg viewBox="0 0 80 520" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Haste principal ondulada */}
         <path
@@ -53,6 +54,7 @@ function BotanicalOrnament({ side }) {
         <circle cx="50" cy="11" r="2.6" fill="currentColor" opacity="0.45"/>
         <circle cx="41" cy="5"  r="2"   fill="currentColor" opacity="0.38"/>
       </svg>
+      </div>
     </div>
   )
 }

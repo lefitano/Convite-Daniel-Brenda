@@ -28,7 +28,7 @@ export default function Invite() {
           </p>
           <p>
             Em meio à presença daqueles que amamos, uniremos nossas vidas no
-            sagrado laço do matrimônio — um momento que permanecerá para sempre
+            sagrado laço do matrimônio um momento que permanecerá para sempre
             em nossas memórias e em nossos corações.
           </p>
           <p>
