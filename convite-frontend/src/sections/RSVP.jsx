@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const encode = (data) =>
   Object.keys(data)
@@ -13,6 +13,14 @@ export default function RSVP() {
   })
   const [nomesAcompanhantes, setNomesAcompanhantes] = useState([])
   const [status, setStatus] = useState('idle')
+
+  useEffect(() => {
+    const saved = localStorage.getItem('rsvp_nome')
+    if (saved) {
+      setFields(prev => ({ ...prev, nome: saved }))
+      setStatus('success')
+    }
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -65,6 +73,7 @@ export default function RSVP() {
         body: encode(payload),
       })
       if (res.ok) {
+        localStorage.setItem('rsvp_nome', fields.nome)
         setStatus('success')
       } else {
         setStatus('error')
