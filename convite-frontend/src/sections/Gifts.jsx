@@ -17,6 +17,7 @@ import imgGasolina    from '../assets/images/CarroAbastcendoV2.jpg'
 import imgPassat from '../assets/images/Passat.jpg'
 import imgEscritorio from '../assets/images/Escritorio.jpg'
 import imgRoupa from '../assets/images/Roupa.jpg'
+import imgPassagens from '../assets/images/PassagensAereas.jpg'
 
 const gifts = [
   {
@@ -24,7 +25,7 @@ const gifts = [
     desc: 'Para que o casal vá além do quintal e coloque os pés em algum lugar com praia.',
     value: 'R$ 790,00',
     image: imgLuaMel,
-    link: null, // substituir pelo link do Mercado Pago
+    link: null,   
   },
   {
     name: 'Robô Aspirador',
@@ -132,15 +133,15 @@ const gifts = [
     link: null,
   },
   {
-    name: 'Fundo pro Escritório dos Dois',
-    desc: 'Dois contadores, uma calculadora e muito amor. Ajude Brenda e Daniel a abrirem o escritório dos sonhos — onde vão somar conquistas e subtrair preocupações.',
+    name: 'Patrocínio para o casal fazer uma viagem',
+    desc: 'Ajuda financeira para o casal curtir a vida em algum lugar do mundão.',
     value: 'R$ 1700,00',
-    image: imgEscritorio,
+    image: imgPassagens,
     link: null,
   },
   {
     name: 'Renovação do Guarda-roupa da Brenda',
-    desc: 'Porque toda mulher merece opções. E a Brenda claramente nunca tem nada para vestir — mesmo com o armário cheio. Um clássico da vida a dois.',
+    desc: 'Porque toda mulher merece opções. E a Brenda claramente nunca tem nada para vestir mesmo com o armário cheio. Um clássico da vida a dois.',
     value: 'R$ 326,00',
     image: imgRoupa,
     link: null,
@@ -163,7 +164,7 @@ export default function Gifts() {
           <span className="gifts__eyebrow">Presentes</span>
           <h2 className="gifts__title">Lista de Presentes</h2>
           <p className="gifts__subtitle">
-            Sua presença já é o maior presente — mas se quiser nos dar um empurrãozinho
+            Sua presença já é o maior presente, mas se quiser nos dar um empurrãozinho
             para a vida a dois, escolha algo da lista abaixo. Promessa de bom uso.
           </p>
         </div>

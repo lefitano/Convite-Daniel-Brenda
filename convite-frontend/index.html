@@ -9,5 +9,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <form name="rsvp" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nome" />
+      <input type="radio" name="confirmacao" value="sim" />
+      <input type="radio" name="confirmacao" value="nao" />
+      <input type="number" name="acompanhantes" />
+      <input type="text" name="nomes_acompanhantes" />
+    </form>
   </body>
 </html>
