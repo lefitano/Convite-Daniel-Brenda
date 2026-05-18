@@ -138,6 +138,14 @@ export default function Hero() {
 
       <div className="hero__individuals" data-aos="fade-up" data-aos-delay="350">
 
+        <div className="hero__couple-header">
+          <span className="hero__couple-eyebrow">Conheça</span>
+          <h2 className="hero__couple-title">O casal</h2>
+          <p className="hero__couple-subtitle">
+            Duas almas que se encontraram e escolheram trilhar o mesmo caminho.
+          </p>
+        </div>
+
         <div className="hero__individuals-photos">
           <div className="hero__individual">
             <div className="hero__individual-img-wrap">
@@ -154,9 +162,25 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="hero__individual-caption">✨ Em meio a tanta gente neste mundo imenso, dois corações se encontraram quase por acaso. Primeiro veio a amizade, depois, como quem não quer nada, nasceu uma história de amor daquelas que parecem ter sido escritas pelas estrelas. Às vezes pensamos: “Ah, se tivéssemos nos conhecido há muitos anos atrás…” Mas entendemos que tudo acontece no tempo perfeito de Deus. E foi nesse tempo que Ele nos uniu, com o coração transbordando de amor, para começarmos juntos uma linda e longa jornada.
-💌 Criamos este cantinho especial para compartilhar cada detalhe desse grande momento que está chegando. Aqui você vai encontrar tudo sobre o nosso casamento, feito com muito carinho e pensado para que cada passo seja acompanhado de perto por vocês.
-🎉 Estamos suuuper ansiosos para celebrar esse dia mágico ao lado de cada um! Afinal, uma história de amor só fica completa quando é vivida e festejada com quem faz parte dela.</p>
+        <div className="hero__individual-caption">
+          <p>
+            Em meio a tanta gente neste mundo imenso, dois corações se encontraram quase por acaso.
+            Primeiro veio a amizade, depois, como quem não quer nada, nasceu uma história de amor
+            daquelas que parecem ter sido escritas pelas estrelas. Às vezes pensamos:
+            “Ah, se tivéssemos nos conhecido há muitos anos atrás…” Mas entendemos que tudo acontece
+            no tempo perfeito de Deus. E foi nesse tempo que Ele nos uniu, com o coração
+            transbordando de amor, para começarmos juntos uma linda e longa jornada.
+          </p>
+          <p>
+            Criamos este cantinho especial para compartilhar cada detalhe desse grande momento que
+            está chegando. Aqui você vai encontrar tudo sobre o nosso casamento, feito com muito
+            carinho e pensado para que cada passo seja acompanhado de perto por vocês.
+          </p>
+          <p>
+            Estamos suuuper ansiosos para celebrar esse dia mágico ao lado de cada um! Afinal,
+            uma história de amor só fica completa quando é vivida e festejada com quem faz parte dela.
+          </p>
+        </div>
 
       </div>
 

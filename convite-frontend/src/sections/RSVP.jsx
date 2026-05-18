@@ -15,9 +15,10 @@ export default function RSVP() {
   const [status, setStatus] = useState('idle')
 
   useEffect(() => {
-    const saved = localStorage.getItem('rsvp_nome')
-    if (saved) {
-      setFields(prev => ({ ...prev, nome: saved }))
+    const nome = localStorage.getItem('rsvp_nome')
+    const confirmacao = localStorage.getItem('rsvp_confirmacao')
+    if (nome && confirmacao) {
+      setFields(prev => ({ ...prev, nome, confirmacao }))
       setStatus('success')
     }
   }, [])
@@ -73,7 +74,8 @@ export default function RSVP() {
         body: encode(payload),
       })
       if (res.ok) {
-        localStorage.setItem('rsvp_nome', fields.nome)
+        localStorage.setItem('rsvp_nome', fields.nome.trim())
+        localStorage.setItem('rsvp_confirmacao', fields.confirmacao)
         setStatus('success')
       } else {
         setStatus('error')
@@ -90,11 +92,19 @@ export default function RSVP() {
           <span className="rsvp__eyebrow">Confirmação</span>
           <h2 className="rsvp__title">Confirme sua Presença</h2>
           <div className="rsvp__success" data-aos="fade-up">
-            <div className="rsvp__success-icon">♡</div>
-            <h3 className="rsvp__success-title">Recebemos sua confirmação!</h3>
+            <div className="rsvp__success-icon">
+              {fields.confirmacao === 'sim' ? '♡' : '♥'}
+            </div>
+            <h3 className="rsvp__success-title">
+              {fields.confirmacao === 'sim'
+                ? 'Recebemos sua confirmação!'
+                : 'Recebemos sua resposta!'}
+            </h3>
             <p className="rsvp__success-text">
-              Obrigado, <strong>{fields.nome}</strong>. Daniel e Brenda ficaram muito felizes
-              com sua resposta. Nos vemos em breve!
+              {fields.confirmacao === 'sim'
+                ? <>Que alegria, <strong>{fields.nome}</strong>! Daniel e Brenda mal podem esperar para celebrar com você. Nos vemos em breve!</>
+                : <>Obrigado por responder, <strong>{fields.nome}</strong>. Sentiremos sua falta, mas entendemos. Estejam sempre em nosso coração!</>
+              }
             </p>
           </div>
         </div>
