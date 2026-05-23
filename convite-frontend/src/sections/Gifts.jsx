@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const PIX_KEY = 'casalmartinsalmag@gmail.com' // substituir pela chave real
+const PIX_KEY = 'casalmartinsalmag@gmail.com' 
 import imgLuaMel      from '../assets/images/Fundo lua de mel.jpg'
 import imgRobo        from '../assets/images/Robô aspirador.jpg'
 import imgCobertor    from '../assets/images/Kit Cobertor.jpg'
@@ -16,10 +16,9 @@ import imgLavagem     from '../assets/images/Kit lavagem.jpg'
 import imgCerveja     from '../assets/images/Cerveja.jpg'
 import imgTalheres    from '../assets/images/Talheres.jpg'
 import imgGasolina    from '../assets/images/CarroAbastcendoV2.jpg'
-import imgPassat from '../assets/images/Passat.jpg'
-import imgEscritorio from '../assets/images/Escritorio.jpg'
 import imgRoupa from '../assets/images/Roupa.jpg'
 import imgPassagens from '../assets/images/PassagensAereas.jpg'
+import fotoPassatV2 from '../assets/images/FotoPassatV2.jpeg'
 
 const gifts = [
   {
@@ -131,7 +130,7 @@ const gifts = [
     name: 'Vaquinha pro Passat',
     desc: 'O Daniel já foi ao detran, já pesquisou seguro, já escolheu a cor e até o cheirinho do banco. Só falta a grana. Ajude a realizar o sonho do futuro marido.',
     value: 'R$ 634,00',
-    image: imgPassat,
+    image: fotoPassatV2,
     link: 'https://link.infinitepay.io/weddingbrendaedaniel/VC1D-VQFKw9LFMK-634,00',
   },
   {
@@ -169,7 +168,6 @@ export default function Gifts() {
       setCopiedCard(name)
       setTimeout(() => setCopiedCard(null), 2000)
     } catch {
-      // fallback para iOS que bloqueia clipboard sem interação direta
       const el = document.createElement('textarea')
       el.value = PIX_KEY
       el.style.position = 'fixed'

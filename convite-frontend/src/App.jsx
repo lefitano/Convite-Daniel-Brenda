@@ -67,6 +67,7 @@ import Gallery from './sections/Gallery'
 import Invite from './sections/Invite'
 import EventInfo from './sections/EventInfo'
 import RSVP from './sections/RSVP'
+import GuestInfo from './sections/GuestInfo'
 import Gifts from './sections/Gifts'
 import Footer from './sections/Footer'
 
@@ -85,6 +86,7 @@ function App() {
       <Invite />
       <EventInfo />
       <RSVP />
+      <GuestInfo />
       <Gifts />
       <Footer />
     </>
