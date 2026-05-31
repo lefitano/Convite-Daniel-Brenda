@@ -18,7 +18,7 @@ import imgTalheres    from '../assets/images/Talheres.jpg'
 import imgGasolina    from '../assets/images/CarroAbastcendoV2.jpg'
 import imgRoupa from '../assets/images/Roupa.jpg'
 import imgPassagens from '../assets/images/PassagensAereas.jpg'
-import fotoPassatV2 from '../assets/images/FotoPassatV2.jpeg'
+import fotoPassatV2 from '../assets/images/PassatV2.jpeg'
 
 const gifts = [
   {
