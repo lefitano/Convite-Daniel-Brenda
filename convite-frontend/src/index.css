@@ -1197,6 +1197,7 @@ h1, h2, h3 {
 
 .event__cards {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
   margin-bottom: 3rem;
@@ -1204,6 +1205,7 @@ h1, h2, h3 {
 
 .event__card {
   flex: 1;
+  min-width: 200px;
   max-width: 260px;
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-import { CalendarDays, Clock4, MapPin } from 'lucide-react'
+import { CalendarDays, Clock4, MapPin, Shirt } from 'lucide-react'
 import fotoLocal from '../assets/images/LocalCerimoniaErecepcao.jpeg'
 
 const cards = [
@@ -19,6 +19,12 @@ const cards = [
     label: 'Local',
     title: 'Refúgio Matões',
     detail: 'Cerimônia e Recepção',
+  },
+  {
+    Icon: Shirt,
+    label: 'Traje',
+    title: 'Passeio Completo',
+    detail: 'Capriche no look',
   },
 ]
 
