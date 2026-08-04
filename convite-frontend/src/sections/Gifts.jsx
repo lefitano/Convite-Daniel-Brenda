@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { encode } from '../utils/netlifyForms'
 
-const PIX_KEY = 'casalmartinsalmag@gmail.com' 
+const PIX_KEY = 'casalmartinsalmag@gmail.com'
 import imgLuaMel      from '../assets/images/Fundo lua de mel.jpg'
 import imgRobo        from '../assets/images/Robô aspirador.jpg'
 import imgCobertor    from '../assets/images/Kit Cobertor.jpg'
@@ -155,12 +156,47 @@ export default function Gifts() {
   const [showAll, setShowAll] = useState(false)
   const [openCard, setOpenCard] = useState(null)
   const [copiedCard, setCopiedCard] = useState(null)
+  const [payerName, setPayerName] = useState('')
+  const [paymentStatus, setPaymentStatus] = useState('idle')
+  const [notifiedGifts, setNotifiedGifts] = useState(() => new Set())
 
   const visibleGifts = showAll ? gifts : gifts.slice(0, INITIAL_COUNT)
   const hasMore = gifts.length > INITIAL_COUNT
 
-  const toggleCard = (name) =>
+  const toggleCard = (name) => {
     setOpenCard(prev => prev === name ? null : name)
+    setPayerName('')
+    setPaymentStatus('idle')
+  }
+
+  const handlePayWithCard = async (gift) => {
+    const trimmed = payerName.trim()
+    if (!trimmed) {
+      setPaymentStatus('error-name')
+      return
+    }
+
+    setPaymentStatus('sending')
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'presente-cartao',
+          nome: trimmed,
+          presente: gift.name,
+          valor: gift.value,
+        }),
+      })
+      setPaymentStatus(res.ok ? 'sent' : 'error')
+    } catch {
+      setPaymentStatus('error')
+    }
+
+    setNotifiedGifts(prev => new Set(prev).add(gift.name))
+    window.open(gift.link, '_blank', 'noopener,noreferrer')
+  }
 
   const handleCopy = async (name) => {
     try {
@@ -228,7 +264,10 @@ export default function Gifts() {
                   </button>
                 </div>
 
-                <div className={`gifts__expand${isOpen ? ' gifts__expand--open' : ''}`}>
+                <div
+                  className={`gifts__expand${isOpen ? ' gifts__expand--open' : ''}`}
+                  inert={!isOpen}
+                >
                   <div className="gifts__payment">
 
                     <div className="gifts__payment-pix">
@@ -251,14 +290,54 @@ export default function Gifts() {
                         <div className="gifts__payment-divider" />
                         <div className="gifts__payment-card">
                           <span className="gifts__payment-label">Cartão de Crédito</span>
-                          <a
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="gifts__payment-link"
-                          >
-                            Pagar com cartão →
-                          </a>
+
+                          {notifiedGifts.has(name) ? (
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="gifts__payment-link"
+                            >
+                              Abrir pagamento novamente →
+                            </a>
+                          ) : (
+                            <form
+                              className="gifts__payment-form"
+                              onSubmit={(e) => {
+                                e.preventDefault()
+                                handlePayWithCard({ name, value, link })
+                              }}
+                            >
+                              <input
+                                type="text"
+                                className="gifts__payment-name-input"
+                                placeholder="Nome completo"
+                                value={payerName}
+                                onChange={(e) => {
+                                  setPayerName(e.target.value)
+                                  setPaymentStatus('idle')
+                                }}
+                              />
+                              <button
+                                type="submit"
+                                className="gifts__payment-link gifts__payment-submit"
+                                disabled={paymentStatus === 'sending'}
+                              >
+                                {paymentStatus === 'sending' ? 'Enviando…' : 'Pagar com cartão →'}
+                              </button>
+                            </form>
+                          )}
+
+                          {paymentStatus === 'error-name' && (
+                            <span className="gifts__payment-error">
+                              Digite seu nome para continuar.
+                            </span>
+                          )}
+                          {paymentStatus === 'error' && (
+                            <span className="gifts__payment-error">
+                              Não conseguimos registrar seu nome, mas você já pode prosseguir com o pagamento.
+                            </span>
+                          )}
                         </div>
                       </>
                     )}

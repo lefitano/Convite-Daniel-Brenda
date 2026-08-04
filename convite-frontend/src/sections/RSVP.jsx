@@ -1,27 +1,23 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { encode } from '../utils/netlifyForms'
 
-const encode = (data) =>
-  Object.keys(data)
-    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
-    .join('&')
+const getStoredRsvp = () => ({
+  nome: localStorage.getItem('rsvp_nome') || '',
+  confirmacao: localStorage.getItem('rsvp_confirmacao') || '',
+})
 
 export default function RSVP() {
-  const [fields, setFields] = useState({
+  const [fields, setFields] = useState(() => ({
     nome: '',
     confirmacao: '',
     acompanhantes: '1',
-  })
+    ...getStoredRsvp(),
+  }))
   const [nomesAcompanhantes, setNomesAcompanhantes] = useState([])
-  const [status, setStatus] = useState('idle')
-
-  useEffect(() => {
-    const nome = localStorage.getItem('rsvp_nome')
-    const confirmacao = localStorage.getItem('rsvp_confirmacao')
-    if (nome && confirmacao) {
-      setFields(prev => ({ ...prev, nome, confirmacao }))
-      setStatus('success')
-    }
-  }, [])
+  const [status, setStatus] = useState(() => {
+    const { nome, confirmacao } = getStoredRsvp()
+    return nome && confirmacao ? 'success' : 'idle'
+  })
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -147,7 +143,7 @@ export default function RSVP() {
               type="text"
               name="nome"
               className="rsvp__input"
-              placeholder="Seu nome"
+              placeholder="Nome completo"
               value={fields.nome}
               onChange={handleChange}
               required

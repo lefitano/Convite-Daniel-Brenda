@@ -2,7 +2,9 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Casamento Daniel &amp; Brenda — 07.11.2026</title>
     <meta name="description" content="Você está convidado para o casamento de Daniel e Brenda! Confirme sua presença e celebre esse momento especial conosco em 07 de Novembro de 2026." />
@@ -31,6 +33,12 @@
       <input type="radio" name="confirmacao" value="nao" />
       <input type="number" name="acompanhantes" />
       <input type="text" name="nomes_acompanhantes" />
+    </form>
+
+    <form name="presente-cartao" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nome" />
+      <input type="text" name="presente" />
+      <input type="text" name="valor" />
     </form>
   </body>
 </html>

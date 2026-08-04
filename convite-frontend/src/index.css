@@ -1479,7 +1479,7 @@ h1, h2, h3 {
 }
 
 .gifts__expand--open {
-  max-height: 400px;
+  max-height: 480px;
 }
 
 .gifts__payment {
@@ -1582,6 +1582,56 @@ h1, h2, h3 {
 
 .gifts__payment-link:hover {
   opacity: 0.75;
+}
+
+.gifts__payment-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.gifts__payment-name-input {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.5rem 0.8rem;
+  font-family: 'Arapey', serif;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background-color: var(--color-light);
+  border: 1px solid rgba(193, 68, 14, 0.2);
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.gifts__payment-name-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(193, 68, 14, 0.1);
+}
+
+.gifts__payment-name-input::placeholder {
+  color: var(--color-text);
+  opacity: 0.35;
+}
+
+.gifts__payment-submit {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.gifts__payment-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.gifts__payment-error {
+  font-family: 'Arapey', serif;
+  font-size: 0.78rem;
+  color: #b91c1c;
 }
 
 .gifts__toggle-wrap {
