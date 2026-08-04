@@ -76,7 +76,7 @@ const gifts = [
     desc: 'Porque briga não tem solução sem chocolate na mesa. Comprovado pela ciência.',
     value: 'R$ 427,00',
     image: imgChocolate,
-    link: null,
+    link: 'https://link.infinitepay.io/weddingbrendaedaniel/VC1D-ezUxUIv13f-427,00',
   },
   {
     name: 'Fogão de Indução',
