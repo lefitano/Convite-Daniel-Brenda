@@ -99,7 +99,7 @@ export default function RSVP() {
             <p className="rsvp__success-text">
               {fields.confirmacao === 'sim'
                 ? <>Que alegria, <strong>{fields.nome}</strong>! Daniel e Brenda mal podem esperar para celebrar com você. Nos vemos em breve!</>
-                : <>Obrigado por responder, <strong>{fields.nome}</strong>. Sentiremos sua falta, mas entendemos. Estejam sempre em nosso coração!</>
+                : <>Obrigado por responder, <strong>{fields.nome}</strong>. Sentiremos sua falta, mas entendemos. Esteja sempre em nosso coração!</>
               }
             </p>
           </div>

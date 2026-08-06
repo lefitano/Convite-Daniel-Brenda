@@ -116,9 +116,9 @@ export default function Hero() {
       <p className="hero__bio" data-aos="fade-up" data-aos-delay="200">
         Duas histórias que se encontraram e decidiram escrever um novo capítulo
         juntas cheio de amor, cumplicidade e muitas aventuras pela frente.
-        Histórias de amor existem, e, às vezes, nem nós mesmos acreditamos
+        Histórias de amor existem, e, às vezes, nem nós mesmos acreditamos em
         todo o tempo que já estamos juntos. 
-        Porém, o brilho intenso e apaixonado dos nossos olhares nos fazem 
+        Porém, o brilho intenso e apaixonado dos nossos olhares nos faz 
         lembrar o porquê de chegarmos até aqui sem sentir tanto o tempo passar... Vamos nos casar! Estamos preparando tudo com muito carinho para curtirmos cada momento com nossos amigos e familiares queridos! 
       </p>
 

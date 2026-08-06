@@ -52,7 +52,7 @@ const gifts = [
   },
   {
     name: 'Vinho de Qualidade',
-    desc: 'Para celebrar as pequenas conquistas do casal e sobreviver às grandes.',
+    desc: 'Para celebrar as pequenas conquistas do casal e sobreviver às grandes batalhas.',
     value: 'R$ 320,00',
     image: imgVinho,
     link: 'https://link.infinitepay.io/weddingbrendaedaniel/VC1D-ufM8KKAQ4k-320,00',
@@ -122,14 +122,14 @@ const gifts = [
   },
   {
     name: '1 mês de gasolina livre',
-    desc: 'Enquanto não vem o carro elétrico vamos ajudar com gasolina que está barata.',
+    desc: 'Enquanto não vem o carro elétrico, vamos ajudar com gasolina que está barata.',
     value: 'R$ 1.024,00',
     image: imgGasolina,
     link: 'https://link.infinitepay.io/weddingbrendaedaniel/VC1D-BFL7kq4ssD-1024,00',
   },
   {
     name: 'Vaquinha pro Passat',
-    desc: 'O Daniel já foi ao detran, já pesquisou seguro, já escolheu a cor e até o cheirinho do banco. Só falta a grana. Ajude a realizar o sonho do futuro marido.',
+    desc: 'O Daniel já foi ao Detran, já pesquisou seguro, já escolheu a cor e até o cheirinho do banco. Só falta a grana. Ajude a realizar o sonho do futuro marido.',
     value: 'R$ 634,00',
     image: fotoPassatV2,
     link: 'https://link.infinitepay.io/weddingbrendaedaniel/VC1D-VQFKw9LFMK-634,00',
